@@ -12,42 +12,57 @@ public class Challenge extends Head {
 	public Challenge(Roomba roomba) {
 		super(roomba);
 	}
+
 	/**
 	 * Without touching the wall reach the endZone
 	 */
 	public void initialize() {
-		driveDirect(1000,1000);
-		sleep(1200);
-		driveDirect(1000,1000);
-		driveDirect(0,190);
-	
-		sleep(1500);
-		driveDirect(1000,1000);
-		sleep(1000);
-		driveDirect(500,1000);
-		driveDirect(1000,1000);
-		
+		// driveDirect(1000,1000);
+		// sleep(1200);
+		/// driveDirect(1000,1000);
+		// driveDirect(0,190);
+
+		// sleep(1500);
+		// driveDirect(1000,1000);
+		// sleep(1000);
+		// driveDirect(500,1000);
+		// driveDirect(1000,1000);
+		// driveDirect(100,-100);
+		// sleep(1800);
+		// driveDirect(0,0);
+		// turn90degrees(0);
+		// driveForward(2);
+		// turn90degrees(1);
+		// driveForward(5);
+		//driveForward(2);
+		//turn90degrees(1);
+		//driveForward(1);
+		//driveForward(2);
+		driveForward(1);	
+		turn90degrees(1);
+		driveForward(3);
+		turn90degrees(1);
+		driveForward(1);
+	}
+
+	void driveForward(int distance) {
+		driveDirect(400, 400);
+		sleep(3200 * distance);
+		driveDirect(0, 0);
 
 	}
-  void driveForward(float distance){
-		float d=3;
-		driveDirect(100,100);
-		sleep((int)(1000*distance));
-		driveDirect(0,100);
+
+	public void turn90degrees(int amount) {
+		for (int i = 0; i < amount; i = i + 1) {
+			driveDirect(-100, 100);
+			sleep(1900);
+			driveDirect(0, 0);
+		}
 
 	}
-  public void turn90degrees(int amount) {
-	  driveDirect(-100,100);
-	 int a=1900*amount;
-	  
-  }
-	
-		
-		
-	
 	
 
 	public void loop() {
-	
+
 	}
 }
